@@ -1,0 +1,43 @@
+Algorithm  checkpoint_lineardata_HTAB
+var
+    set1: Array_of INTEGER[];
+    set2: Array_of INTEGER[];
+    i:INTEGER:=0;
+    j:INTEGER:=0;
+    sum1:INTEGER:=0;
+    sum2:INTEGER:=0;
+    htab : HASH_TABLE<INTEGER,INTEGER>;
+    count:INTEGER:=1;
+begin
+    
+    Write('enter set1');
+    read(set1);
+
+    Write('enter set2'); 
+    read(set2)
+    
+    for i FROM 0 TO set1.length STEP 1  DO
+         htab.insert(set1[i],1);
+    end for
+
+    for j FROM 0 TO set2.length STEP 1  DO
+
+        if (htab.lookup(set2[j]) = TRUE) then
+             count := htab.get(set2[j]);
+             htab.insert(set2[j],count+1);
+         
+         else
+             htab.insert(set2[j],1);
+         end if
+    end for   
+    //SUM OF NUMBERS DISTINCT  
+    if (count=1) then
+     sum1=set1[i]+set2[j];
+    //SUM OF SAME NUMBERS
+     else if (count>1) then
+     sum2=(set1[i]*count)+(set2[j]*count);
+     end if
+
+end  
+
+      

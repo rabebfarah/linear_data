@@ -1,0 +1,42 @@
+Algorithm checkpoint_lineardata
+var
+    set1: Array_of INTEGER[];
+    set2: Array_of INTEGER[];
+    i:INTEGER:=0;
+    j:INTEGER:=0;
+    sum1:INTEGER:=0;
+    sum2:INTEGER:=0;
+    
+  
+begin
+    
+    Write('enter set1');
+    read(set1);
+
+    Write('enter set2'); 
+    read(set2);
+    
+   //SUM OF NUMBERS DISTINCT   
+    for i FROM 0 TO set1.length STEP 1  DO
+      for j FROM 0 TO set2.length STEP 1  DO
+          
+        if( set1[i]<>set2[j]) then
+         sum1=set1[i]+set2[j];
+         end if
+
+    end for
+    end for
+
+
+   //SUM OF SAME NUMBERS
+     for j FROM 0 TO set2.length STEP 1  DO
+      for i FROM 0 TO set1.length STEP 1  DO
+
+       if( set1[i]==set2[j]) then
+         sum2=set1[i]+set2[j];
+         end if
+
+     end for 
+     end for 
+
+ end
